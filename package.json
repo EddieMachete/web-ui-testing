@@ -1,0 +1,23 @@
+{
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/EddieMachete/web-ui-testing/issues"
+  },
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.18.1"
+  },
+  "homepage": "https://github.com/EddieMachete/web-ui-testing#readme",
+  "keywords": [],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "web-ui-testing",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EddieMachete/web-ui-testing.git"
+  },
+  "scripts": {
+    "test": "npx playwright test"
+  },
+  "version": "1.0.0"
+}
