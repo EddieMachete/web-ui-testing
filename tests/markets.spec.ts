@@ -1,12 +1,38 @@
-import { test, expect } from '@playwright/test';
+import { browser, test, expect } from '@playwright/test';
+import { TEST_CONFIGURATION } from 'configuration';
+
+test(
+    'HTTP authentication',
+   async ({ browser }) => {
+
+    console.log(TEST_CONFIGURATION);
+
+
+     const context = await browser.newContext(
+       {
+          httpCredentials: {
+            username: TEST_CONFIGURATION.httpAuthUserName,
+            password: TEST_CONFIGURATION.httpAuthPassword,
+          }
+        }
+     );
+
+     const page = await context.newPage();
+     await page.goto(`${TEST_CONFIGURATION.baseURL}markets`);
+     expect(await page.screenshot()).toMatchSnapshot('landing.png');
+   }
+)
 
 test(
   'Markets hero looks as designed', async ({ page }) => {
-    // 1. Go to markets landing
-    await page.goto('https://upcoming11.shopify.com/markets');
+    // 1. When working on a staging environment, authentication will be requested.
+    //    Before navigating to the page, handle the authentication `prompt` dialog.
+    page.on('dialog', async dialog => {
+      await dialog.accept();   
+    });
 
-    // 2. Check if page is password protected,
-    //    authenticate if so
+    // 2. Go to markets landing
+    await page.goto(`${TEST_CONFIGURATION.baseURL}markets`);
 
     // 3. Hero is at top of the page, no navigation is required
     // await expect(page).toHaveTitle(/Getting started/);
