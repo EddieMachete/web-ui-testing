@@ -1,12 +1,9 @@
 import { browser, test, expect } from '@playwright/test';
-import { TEST_CONFIGURATION } from 'configuration';
+import { TEST_CONFIGURATION } from './globalVariables';
 
 test(
     'HTTP authentication',
    async ({ browser }) => {
-
-    console.log(TEST_CONFIGURATION);
-
 
      const context = await browser.newContext(
        {
