@@ -17,7 +17,10 @@
     "url": "git+https://github.com/EddieMachete/web-ui-testing.git"
   },
   "scripts": {
-    "test": "npx playwright test"
+    "test": "npx playwright test",
+    "start:docker": "npm run start:docker-up",
+    "start:docker-down": "docker stop pw && docker rmi playwright-tests -f",
+    "start:docker-up": "docker build -t playwright-tests . && docker run --name pw -it playwright-tests"
   },
-  "version": "1.0.0"
+  "version": "0.0.2"
 }
