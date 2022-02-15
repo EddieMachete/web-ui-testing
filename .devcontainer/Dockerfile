@@ -18,4 +18,6 @@ FROM mcr.microsoft.com/vscode/devcontainers/typescript-node:0-${VARIANT}
 # RUN su node -c "npm install -g <your-package-list -here>"
 
 # WORKDIR /app
+
+ENV PORT 9323
 EXPOSE 9323
