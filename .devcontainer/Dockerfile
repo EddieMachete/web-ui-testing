@@ -18,7 +18,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/typescript-node:0-${VARIANT}
 # RUN su node -c "npm install -g <your-package-list -here>"
 
 # WORKDIR /app
-# ENV PATH /app/node_modules/.bin:$PATH
+ENV PATH /app/node_modules/.bin:$PATH
 # COPY ./ ./
 
 RUN apt-get update && apt-get -y install libnss3 libatk-bridge2.0-0 libdrm-dev libxkbcommon-dev libgbm-dev libasound-dev libatspi2.0-0 libxshmfence-dev
