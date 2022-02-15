@@ -19,7 +19,7 @@
   "scripts": {
     "test": "npx playwright test",
     "start:docker": "npm run start:docker-up",
-    "start:docker-down": "docker rmi playwright-tests -f && docker stop pw",
+    "start:docker-down": "docker stop pw && docker rm pw && docker rmi playwright-tests -f",
     "start:docker-up": "docker build -t playwright-tests --rm . && docker run --name pw -it playwright-tests"
   },
   "version": "0.0.2"
