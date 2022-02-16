@@ -1,7 +1,7 @@
 export const TEST_CONFIGURATION: { [key: string]: string } = {
   baseUrl: 'https://www.shopify.com/',
   httpAuthUserName: '',
-  httpAuthUserPassword: '',
+  httpAuthPassword: '',
 };
 
 export const TEST_BREAKPOINTS = [

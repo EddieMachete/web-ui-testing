@@ -15,7 +15,7 @@ test(
      );
 
      const page = await context.newPage();
-     await page.goto(`${TEST_CONFIGURATION.baseURL}markets`);
+     await page.goto(`${TEST_CONFIGURATION.baseUrl}markets`);
      expect(await page.screenshot()).toMatchSnapshot('landing.png');
    }
 )
@@ -29,7 +29,7 @@ test(
     });
 
     // 2. Go to markets landing
-    await page.goto(`${TEST_CONFIGURATION.baseURL}markets`);
+    await page.goto(`${TEST_CONFIGURATION.baseUrl}markets`);
 
     // 3. Hero is at top of the page, no navigation is required
     // await expect(page).toHaveTitle(/Getting started/);
