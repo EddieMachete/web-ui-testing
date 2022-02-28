@@ -1,7 +1,7 @@
 import { browser, test, expect } from '@playwright/test';
 import { TEST_CONFIGURATION } from './globalVariables';
 
-test(
+test.skip(
     'HTTP authentication',
    async ({ browser }) => {
 
@@ -20,7 +20,7 @@ test(
    }
 )
 
-test(
+test.skip(
   'Markets hero looks as designed', async ({ page }) => {
     // 1. When working on a staging environment, authentication will be requested.
     //    Before navigating to the page, handle the authentication `prompt` dialog.
